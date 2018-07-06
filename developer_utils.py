@@ -3,6 +3,11 @@ import sys
 import pkgutil
 import importlib
 
+
+def deb(msg):
+    print("\n\t[BlenderVR][Debug] ", msg, "\n")
+
+
 def setup_addon_modules(path, package_name, reload):
     """
     Imports and reloads all modules in this addon.
