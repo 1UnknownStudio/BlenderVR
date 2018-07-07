@@ -1,6 +1,6 @@
 import bpy
 from .. import blendervr
-from .. import developer_utils as dUtil
+from .. import developer_utils as dutil
 
 
 # Operator to start the HMD
@@ -10,6 +10,6 @@ class ActivateHMD(bpy.types.Operator):
     bl_options = {'REGISTER'}
 
     def execute(self, context):
-        dUtil.deb("Starting VR!")
+        dutil.deb("Starting VR!")
         blendervr.get_device().start()
         return {'FINISHED'}

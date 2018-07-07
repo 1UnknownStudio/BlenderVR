@@ -38,8 +38,11 @@ class Device:
         self.eyeR.name = "eyeR"
 
     def destroy_cameras(self):
-        self.eyeL.select = True
-        O.object.delete()
+        try:
+            self.eyeL.select = True
+            O.object.delete()
 
-        self.eyeR.select = True
-        O.object.delete()
+            self.eyeR.select = True
+            O.object.delete()
+        except:
+            dUtil.err("HMD needs to be started first!")

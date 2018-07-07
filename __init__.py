@@ -18,7 +18,23 @@ Created by Lars Johan Nyboe
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+import bpy
 
+# load and reload submodules
+##################################
+
+import importlib
+from . import developer_utils as dutil
+from . import ui
+import traceback
+
+importlib.reload(dutil)
+importlib.reload(ui)
+modules = dutil.setup_addon_modules(__path__, __name__, "bpy" in locals())
+
+
+# Addon meta
+##################################
 bl_info = {
     "name": "BlenderVR",
     "description": "An addon for viewing and editing 3D models in VR",
@@ -31,33 +47,23 @@ bl_info = {
     "category": "VR"
 }
 
-
-import bpy
-
-
-# load and reload submodules
-##################################
-
-import importlib
-from . import developer_utils as dUtil
-
-importlib.reload(dUtil)
-modules = dUtil.setup_addon_modules(__path__, __name__, "bpy" in locals())
-
-
 # register
 ##################################
 
-import traceback
 
 def register():
-    try: bpy.utils.register_module(__name__)
-    except: traceback.print_exc()
+    try:
+        bpy.utils.register_module(__name__)
+    except:
+        traceback.print_exc()
 
-    dUtil.deb("Registered {} with {} modules".format(bl_info["name"], len(modules)))
+    dutil.deb("Registered {} with {} modules".format(bl_info["name"], len(modules)))
+
 
 def unregister():
-    try: bpy.utils.unregister_module(__name__)
-    except: traceback.print_exc()
+    try:
+        bpy.utils.unregister_module(__name__)
+    except:
+        traceback.print_exc()
 
-    dUtil.deb("Unregistered {}".format(bl_info["name"]))
+    dutil.deb("Unregistered {}".format(bl_info["name"]))

@@ -8,6 +8,10 @@ def deb(msg):
     print("\n\t[BlenderVR][Debug] ", msg, "\n")
 
 
+def err(msg):
+    print("\n\t[BlenderVR][ERROR] ", msg, "\n")
+
+
 def setup_addon_modules(path, package_name, reload):
     """
     Imports and reloads all modules in this addon.

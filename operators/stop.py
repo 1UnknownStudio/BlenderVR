@@ -1,6 +1,6 @@
 import bpy
 from .. import blendervr
-from .. import developer_utils as dUtil
+from .. import developer_utils as dutil
 
 
 # Operator to stop the HMD
@@ -10,6 +10,6 @@ class DeActivateHMD(bpy.types.Operator):
     bl_options = {'REGISTER'}
 
     def execute(self, context):
-        dUtil.deb("Stopping VR!")
+        dutil.deb("Stopping VR!")
         blendervr.get_device().stop()
         return {'FINISHED'}
