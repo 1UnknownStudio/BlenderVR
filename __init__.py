@@ -39,7 +39,7 @@ bl_info = {
     "name": "BlenderVR",
     "description": "An addon for viewing and editing 3D models in VR",
     "author": "Lars Johan Nyboe",
-    "version": (0, 1, 1),
+    "version": (0, 2, 0),
     "blender": (2, 79),
     "location": "View3D",
     "warning": "This addon is still in development.",

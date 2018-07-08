@@ -12,5 +12,5 @@ class Messenger:
     def __init__(self, con):
         self.__con = con
 
-    
+
 
