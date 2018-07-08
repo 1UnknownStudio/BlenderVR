@@ -11,5 +11,6 @@ class DeActivateHMD(bpy.types.Operator):
 
     def execute(self, context):
         dutil.deb("Stopping VR!")
-        blendervr.get_device().stop()
+        blendervr.getServer().close()
+        dutil.deb("Disconnected from server")
         return {'FINISHED'}

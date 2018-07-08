@@ -1,15 +1,14 @@
-import os
-import sys
-import pkgutil
 import importlib
+import os
+import pkgutil
 
 
 def deb(msg):
-    print("\n\t[BlenderVR][Debug] ", msg, "\n")
+    print("\t[BlenderVR][Debug] ", msg)
 
 
 def err(msg):
-    print("\n\t[BlenderVR][ERROR] ", msg, "\n")
+    print("\t[BlenderVR][ERROR] ", msg)
 
 
 def setup_addon_modules(path, package_name, reload):

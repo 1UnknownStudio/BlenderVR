@@ -40,7 +40,7 @@ bl_info = {
     "description": "An addon for viewing and editing 3D models in VR",
     "author": "Lars Johan Nyboe",
     "version": (0, 1, 1),
-    "blender": "2.79",
+    "blender": (2, 79),
     "location": "View3D",
     "warning": "This addon is still in development.",
     "wiki_url": "https://github.com/larsjohan/blendervr/wiki",

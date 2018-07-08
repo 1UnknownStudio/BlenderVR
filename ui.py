@@ -1,5 +1,4 @@
 import bpy
-from .operators import start, stop
 
 
 class VRPanel(bpy.types.Panel):
